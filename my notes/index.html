@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MY WORK AND EXERCISE — Study Planner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#071025;
+      --card: rgba(6,16,30,0.65);
+      --glass: rgba(255,255,255,0.04);
+      --accent1:#ff7ab6;
+      --accent2:#7af2ff;
+      --accent3:#ffd57a;
+      --text:#e9f3ff;
+      --muted:#9fb0c8;
+      --success:#7ef59a;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--text);
+      background: linear-gradient(160deg,#071029 0%, #071232 40%, #081120 100%);}
+    .wrap{max-width:1100px;margin:34px auto;padding:26px;border-radius:18px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 8px 40px rgba(2,6,23,0.7);}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:14px;align-items:center}
+    /* logo with user's photo */
+    .logo{width:64px;height:64px;border-radius:12px;overflow:hidden;flex:0 0 64px;box-shadow:0 6px 18px rgba(3,12,20,0.6);}
+    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+    header h1{margin:0;font-size:20px;letter-spacing:0.2px}
+    header p{margin:0;color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:20px}
+    /* left content */
+    .content{padding:18px;background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border-radius:12px}
+    .section{margin-bottom:14px}
+    .section h2{display:flex;align-items:center;gap:12px;margin:0 0 8px 0;font-size:16px}
+    .pill{padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent3),var(--accent1));color:#07202b;font-weight:700;font-size:12px}
+    /* accordion */
+    .accordion{border-radius:10px;padding:10px}
+    .item{border-radius:10px;padding:12px;margin-bottom:10px;background:var(--card);backdrop-filter: blur(6px);}
+    .item h3{margin:0;display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .meta{color:var(--muted);font-size:13px}
+    .body{margin-top:10px;color:var(--text);line-height:1.5}
+    .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+    .tag{padding:6px 8px;border-radius:8px;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#04232a;font-weight:600;font-size:12px}
+    /* right sidebar */
+    .sidebar{padding:18px;border-radius:12px}
+    .card{padding:12px;border-radius:12px;background:rgba(255,255,255,0.02);margin-bottom:14px}
+    .controls{display:flex;gap:8px;flex-wrap:wrap}
+    button{border:0;padding:9px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#04232a;font-weight:700;cursor:pointer}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+    /* checklist */
+    .checklist{display:flex;flex-direction:column;gap:10px}
+    .check{display:flex;align-items:center;gap:10px}
+    input[type=checkbox]{transform:scale(1.12)}
+    /* photo box style */
+    .photobox img{width:100%;border-radius:10px;border:1px solid rgba(255,255,255,0.06);box-shadow:0 8px 24px rgba(0,0,0,0.45)}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:920px){.grid{grid-template-columns:1fr}.logo{width:52px;height:52px}}
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <!-- USER PHOTO in header: make sure myphoto.jpg exists in same folder -->
+        <div class="logo"><img src="myphoto.jpg" alt="Swami Photo"></div>
+        <div>
+          <h1>MY WORK AND EXERCISE</h1>
+          <p class="muted small">JAY SWAMINARAYAN — SWAMI SREEJI • Starting date: <strong>8/12/2025</strong></p>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div class="muted small">Progress</div>
+        <div style="font-weight:800;font-size:18px">Keep studying • Be consistent</div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main class="content">
+        <section class="section">
+          <h2><span class="pill">Basics</span></h2>
+          <div class="accordion" id="basics">
+            <div class="item">
+              <h3>Task 1 <span class="meta">Core concepts</span></h3>
+              <div class="body">
+                <ul>
+                  <li>Basic all the things to start writing programming</li>
+                  <li>Binary 1/0, decimal, hexadecimal system — conversions</li>
+                  <li>Basics about memory; data types: int, long, char</li>
+                  <li>Print "Hello World"; arithmetic operations in code</li>
+                  <li>Array & string basics; for & while loops</li>
+                  <li>Pattern programs; arrays & pointers in depth — lots of practice</li>
+                </ul>
+                <div class="tags"><div class="tag">Beginner</div><div class="tag">C Basics</div><div class="tag">Practice</div></div>
+              </div>
+            </div>
+
+            <div class="item">
+              <h3>Next chapter: do everything with C <span class="meta">Linux & Projects</span></h3>
+              <div class="body">
+                <ul>
+                  <li>Linux / Computer commands & environment</li>
+                  <li>Logical questions in C — write programs</li>
+                  <li>File system programming in C; build a project using above</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="item">
+              <h3>Data Structures <span class="meta">Core ADTs</span></h3>
+              <div class="body">
+                <ul>
+                  <li>Queue, Stack, Deque</li>
+                  <li>Priority Queue / Heap</li>
+                  <li>Implement & practise core questions</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="item">
+              <h3>Algorithms <span class="meta">Sort & Search</span></h3>
+              <div class="body">
+                <ul>
+                  <li>Sorting: Bubble, Selection, Insertion, Merge, Quick</li>
+                  <li>Searching: Linear, Binary</li>
+                  <li>Basic algorithm techniques</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="item">
+              <h3>Next: Java / C++</h3>
+              <div class="body">Port notes & practice to Java and C++ after mastering C, DS & Algos.</div>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <h2><span class="pill">Study Plan (organized)</span></h2>
+          <div class="accordion" id="plan">
+            <div class="item"><h3>Week 1 — Fundamentals</h3><div class="body">Binary & conversions, Hello World, loops, patterns. 10 small problems daily.</div></div>
+            <div class="item"><h3>Week 2 — Arrays & Pointers</h3><div class="body">Deep dive arrays, pointers, memory layout; 8–12 programs.</div></div>
+            <div class="item"><h3>Week 3 — C systems & File I/O</h3><div class="body">GCC, GDB, file I/O projects.</div></div>
+            <div class="item"><h3>Week 4–6 — Data Structures</h3><div class="body">Implement stack, queue, deque, heap.</div></div>
+            <div class="item"><h3>Week 7–8 — Algorithms & Project</h3><div class="body">Sorting, searching, build combined project.</div></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2><span class="pill">Notes & Tips</span></h2>
+          <div class="item">
+            <div class="body">
+              <ol>
+                <li>Warm-up: 15 minutes reading/theory</li>
+                <li>30–60 minutes solving problems</li>
+                <li>Implement solutions & test; write short notes</li>
+                <li>Review mistakes and re-solve after 48 hours</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <aside class="sidebar">
+        <div class="card">
+          <strong>Quick Controls</strong>
+          <div class="controls" style="margin-top:10px">
+            <button id="downloadBtn">Download HTML</button>
+            <button id="printBtn" class="ghost">Print</button>
+            <button id="themeBtn" class="ghost">Toggle Theme</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>Checklist</strong>
+          <div class="checklist" style="margin-top:12px">
+            <label class="check"><input type="checkbox" data-key="basics"> Finish basics & conversions</label>
+            <label class="check"><input type="checkbox" data-key="arrays"> Arrays & pointers</label>
+            <label class="check"><input type="checkbox" data-key="c"> C projects & file I/O</label>
+            <label class="check"><input type="checkbox" data-key="ds"> Data structures</label>
+            <label class="check"><input type="checkbox" data-key="algo"> Algorithms</label>
+          </div>
+        </div>
+
+       
+        <div class="card">
+          <strong>Motivation</strong>
+          <p style="margin-top:8px;color:var(--muted);font-size:14px">"Slow and steady wins the race." — Keep a steady pace and build small wins every day.</p>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>Created for your study plan — want color changes, round photo, or bigger header image? કહીં દેજો.</footer>
+  </div>
+
+  <script>
+    // Download current page as HTML file
+    document.getElementById('downloadBtn').addEventListener('click', function(){
+      const blob = new Blob([document.documentElement.outerHTML],{type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'study-planner.html';
+      a.click(); URL.revokeObjectURL(url);
+    });
+
+    // Print
+    document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+
+    // Theme toggle (switch CSS variables)
+    let dark = true;
+    document.getElementById('themeBtn').addEventListener('click', function(){
+      if(dark){
+        document.documentElement.style.setProperty('--bg','#f6fbff');
+        document.documentElement.style.setProperty('--text','#07202b');
+        document.documentElement.style.setProperty('--muted','#37566a');
+        document.documentElement.style.setProperty('--card','rgba(3,17,26,0.04)');
+        dark = false;
+      } else {
+        document.documentElement.style.setProperty('--bg','#071025');
+        document.documentElement.style.setProperty('--text','#e9f3ff');
+        document.documentElement.style.setProperty('--muted','#9fb0c8');
+        document.documentElement.style.setProperty('--card','rgba(6,16,30,0.65)');
+        dark = true;
+      }
+    });
+
+    // Save checklist state to localStorage
+    const checkboxes = document.querySelectorAll('.checklist input[type=checkbox]');
+    checkboxes.forEach(cb => {
+      const k = 'study_'+(cb.dataset.key||'item');
+      cb.checked = localStorage.getItem(k)==='1';
+      cb.addEventListener('change', ()=> localStorage.setItem(k, cb.checked? '1':'0'));
+    });
+  </script>
+</body>
+</html>
